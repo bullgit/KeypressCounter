@@ -8,7 +8,8 @@ $(document).ready(function(){
       recep.append('<div>You pressed <span id="res"></span> keys</div>');
   
   $('body').keyup(function(e){
-    var res = $('#res');     // Where the number of keypress will appear.
+    var res = $('#res'), // Where the number of keypress will appear.
+        zone = $('textarea'); // The input/textarea that we will count the keypress 
     
     // If del is pressed, decrement the value of i.
     if(e.keyCode == 8){ 
@@ -20,7 +21,7 @@ $(document).ready(function(){
     } 
     
     //if the textarea is empty, reset the number incrementation.
-    if (!$.trim($("textarea").val())) {
+    if (!$.trim(zone.val())) {
       res.empty().append(0);
       i = 0
     }
